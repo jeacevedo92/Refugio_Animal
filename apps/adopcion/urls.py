@@ -1,7 +1,8 @@
-from django.conf.urls import url,include
-from apps.mascota.views import index
+from django.conf.urls import url
+from apps.adopcion.views import index
 
 urlpatterns=[
-
+    url('', index),
+    url('home', index),
 
 ]
