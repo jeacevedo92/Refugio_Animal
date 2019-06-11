@@ -2,8 +2,13 @@ from django import forms
 
 from apps.mascota.models import Mascota
 
-
 class MascotaForm(forms.ModelForm):
+
+    #def __init__(self, *args, **kwargs):
+     #   super(MascotaForm, self).__init__(*args, **kwargs)
+      #  self.fields['nombre'].widget.attrs['class'] = 'form-control'
+
+
 
     class Meta:
         model = Mascota
@@ -11,7 +16,7 @@ class MascotaForm(forms.ModelForm):
         fields = [
             'nombre',
             'sexo',
-            'edad_aproximada',
+            'edad',
             'fecha_rescate',
             'persona',
             'vacuna',
@@ -20,16 +25,7 @@ class MascotaForm(forms.ModelForm):
         labels = {
             'nombre': 'Nombre',
             'sexo': 'Sexo',
-            'edad_aproximada': 'Edad Aproximada',
-            'fecha_rescate': 'Fecha de rescate',
-            'persona': 'Adoptante',
-            'vacuna': 'Vacunas',
-        }
-
-        labels = {
-            'nombre': 'Nombre',
-            'sexo': 'Sexo',
-            'edad_aproximada': 'Edad Aproximada',
+            'edad': 'Edad Aproximada',
             'fecha_rescate': 'Fecha de rescate',
             'persona': 'Adoptante',
             'vacuna': 'Vacunas',
@@ -38,7 +34,7 @@ class MascotaForm(forms.ModelForm):
         widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control'}),
             'sexo': forms.TextInput(attrs={'class': 'form-control'}),
-            'edad_aproximada': forms.TextInput(attrs={'class': 'form-control'}),
+            'edad': forms.TextInput(attrs={'class': 'form-control'}),
             'fecha_rescate': forms.TextInput(attrs={'class': 'form-control'}),
             'persona': forms.Select(attrs={'class': 'form-control'}),
             'vacuna': forms.CheckboxSelectMultiple(),

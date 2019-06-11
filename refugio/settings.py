@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.adopcion',
     'apps.mascota',
+    'bootstrap3',
 
 ]
 
